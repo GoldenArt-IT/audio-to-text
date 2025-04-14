@@ -34,26 +34,25 @@ def show_progress(estimated_time, result_dict, status_placeholder, progress_bar)
 # --- Main app logic ---
 def main():
     st.title("GA Audio Transcriber")
+    
+    with st.expander(" **🧭 How to Use This App?**"):
+        st.markdown("""
+            1. **Get Your API Key**  
+                - Go to [https://www.assemblyai.com](https://www.assemblyai.com)  
+                - Sign up or log in  
+                - Copy your API Key from the dashboard
 
-    st.markdown("""
-        ### 🧭 How to Use This App
+            2. **Paste the API Key in the Field Above**
 
-        1. **Get Your API Key**  
-            - Go to [https://www.assemblyai.com](https://www.assemblyai.com)  
-            - Sign up or log in  
-            - Copy your API Key from the dashboard
+            3. **Upload a Voice Note**  
+                - Supported formats: MP3, WAV, AAC, FLAC, M4A, OGG, WEBM
 
-        2. **Paste the API Key in the Field Above**
+            4. **Click "Start Transcription"**  
+                - Wait for the process to finish  
+                - View your transcribed text below
 
-        3. **Upload a Voice Note**  
-            - Supported formats: MP3, WAV, AAC, FLAC, M4A, OGG, WEBM
-
-        4. **Click "Start Transcription"**  
-            - Wait for the process to finish  
-            - View your transcribed text below
-
-        5. **Click "📋 Copy to Clipboard" and Paste to CHATGPT to summarize the text**
-        """)
+            5. **Click "📋 Copy to Clipboard" and Paste to CHATGPT to summarize the text**
+            """)
 
     api_key = st.text_input("Enter API Key:")
 

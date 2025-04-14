@@ -3,6 +3,7 @@ import assemblyai as aai
 import time
 import os
 import threading
+from st_copy_to_clipboard import st_copy_to_clipboard as clipboard
 
 # --- Configuration ---
 def get_estimated_time(file_path):
@@ -78,6 +79,10 @@ def main():
             duration = round(result["end_time"] - result["start_time"], 2)
             st.success(f"Transcription completed in {duration} seconds")
             st.text_area("Transcription Output", result["text"], height=300)
+
+            text_prompt = "Tolong kemaskan dan susun semula transkrip perbualan ini supaya menjadi ayat yang tersusun, mudah difahami, dan sesuai dibaca oleh staf pengurusan. Kekalkan maksud asal. Gunakan Bahasa Melayu. Jika ada bahagian yang tidak jelas, simpulkan sahaja secara logik. Ini transkripnya: "
+
+            clipboard(text_prompt + result["text"], before_copy_label="📋 Copy to Clipboard")
 
 if __name__ == "__main__":
     main()

@@ -9,3 +9,4 @@ gspread
 oauth2client
 assemblyai
 st_copy_to_clipboard
+streamlit_antd_components

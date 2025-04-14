@@ -4,6 +4,7 @@ import time
 import os
 import threading
 from st_copy_to_clipboard import st_copy_to_clipboard as clipboard
+import streamlit_antd_components as sac
 
 # --- Configuration ---
 def get_estimated_time(file_path):
@@ -53,6 +54,12 @@ def main():
 
             5. **Click "📋 Copy to Clipboard" and Paste to CHATGPT to summarize the text**
             """)
+        sac.segmented(
+            items=[
+                sac.SegmentedItem(label="GA Github", icon='github', href='https://github.com/GoldenArt-IT'),
+                sac.SegmentedItem(label="GA Audio Transcriber - Code Docs", icon='github', href='https://github.com/GoldenArt-IT/audio-to-text')
+            ], align='center', size='sm', radius='xl'
+        )
 
     api_key = st.text_input("Enter API Key:")
 

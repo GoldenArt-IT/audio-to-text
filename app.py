@@ -64,6 +64,7 @@ def main():
     transcriber = aai.Transcriber(config=config)
 
     audio_file = st.file_uploader("Upload audio file", type=['mp3', 'wav', 'aac', 'flac', 'm4a', 'ogg', 'webm'])
+    st.audio(audio_file)
 
     if st.button("Start Transcription"):
         if not audio_file:
